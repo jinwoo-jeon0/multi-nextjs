@@ -7,7 +7,10 @@
     "@multi-nextjs/*"
   ],
   "scripts": {
+    "build-common": "yarn workspace @multi-nextjs/common build",
+    "predev": "yarn build-common",
     "dev": "yarn workspace @multi-nextjs/site0 dev",
+    "prebuild": "yarn build-common",
     "build": "yarn workspace @multi-nextjs/site0 build",
     "start": "yarn workspace @multi-nextjs/site0 start",
     "lint": "yarn workspaces run lint"
