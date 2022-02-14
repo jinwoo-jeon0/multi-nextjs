@@ -1,5 +1,15 @@
 {
   "name": "multi-nextjs",
   "version": "1.0.0",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "@multi-nextjs/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace @multi-nextjs/site0 dev",
+    "build": "yarn workspace @multi-nextjs/site0 build",
+    "start": "yarn workspace @multi-nextjs/site0 start",
+    "lint": "yarn workspaces run lint"
+  }
 }

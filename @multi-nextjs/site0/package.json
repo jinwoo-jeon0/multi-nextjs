@@ -1,5 +1,6 @@
 {
   "name": "@multi-nextjs/site0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --port 5001",
