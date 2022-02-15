@@ -9,10 +9,13 @@
   "scripts": {
     "build-common": "yarn workspace @multi-nextjs/common build",
     "predev": "yarn build-common",
-    "dev": "yarn workspace @multi-nextjs/site0 dev",
+    "dev": "concurrently \"yarn workspace @multi-nextjs/site0 dev\" \"yarn workspace @multi-nextjs/server dev\"",
     "prebuild": "yarn build-common",
-    "build": "yarn workspace @multi-nextjs/site0 build",
-    "start": "yarn workspace @multi-nextjs/site0 start",
+    "build": "yarn workspace @multi-nextjs/site0 build && yarn workspace @multi-nextjs/server build",
+    "start": "concurrently \"yarn workspace @multi-nextjs/site0 start\" \"yarn workspace @multi-nextjs/server start\"",
     "lint": "yarn workspaces run lint"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
   }
 }
